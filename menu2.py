@@ -10,6 +10,7 @@ k=Label(new,text="Select the amount 😁😁😁")
 k.grid(row=3,column=0,padx=10)
 z=IntVar()
 a=["Pepperoni","Cheese","Sweet Chilli","⭐Tripple Layered Pizza⭐"]
+
 u=Combobox(new,textvariable=z,width=15)
 u["values"]=tuple(range(101))
 u.grid(row=3,column=1)
@@ -27,6 +28,16 @@ g.grid(row=2,column=3)
 g1.grid(row=3,column=3)
 g2.grid(row=4,column=3)
 g3.grid(row=5,column=3)
+
+def order():
+    index=hi.curselection()
+    print(index)
+    text="You ordered"+str(u)+a[index]+endVal
+    c.config(text)
+button=Button(new,text="Order",command=order)
+button.grid(row=5,column=2)
+c=Label(new,anchor="center")
+c.grid(row=6,column=1,pady=25)
 
 
 c=Label(new,anchor="center")
